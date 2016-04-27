@@ -1,0 +1,252 @@
+<!Doctype html>
+<html>
+<head>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  
+  <style>
+  body {
+  background-color: #EFFBF8;
+}
+#ajax {
+  
+  text-align: center;
+  margin: auto;
+  padding: 30px;
+  margin-top: 15%;
+}
+
+button {
+ width: 200px;
+  height: 75px;
+  margin-left: 40%;
+  
+}
+
+.invisible {
+  display: none;
+}
+
+  </style>
+
+  </head>
+  <body>
+<div id="ajax"></div>
+<div class="result"></div>
+
+
+<button id="b1" class="btn btn-primary">Get a Quote</button>
+<button id="b2" class="invisible btn btn-success">Have Another</button>
+<button id="b3" class="invisible btn btn-info">Want More?</button>
+<button id="b4" class="invisible btn btn-warning">Want Seconds?</button>
+<button id="b5" class="invisible btn btn-danger">Bring It On!</button>
+<button id="b6" class="invisible btn btn-primary">Dish It Out</button>
+<button id="b7" class="invisible btn btn-success">Bon Appetite</button>
+<button id="b8" class="invisible btn btn-info">A Quote for You</button>
+<button id="b9" class="invisible btn btn-warning">Best Quote Ever!</button>
+<button id="b10" class="invisible btn btn-danger">This One's for You</button>
+    
+    <script>
+    var randomNum = Math.ceil(Math.random() * 20);
+var randomPlusOne = randomNum + 1;
+var randomPlusTwo = randomNum + 2;
+var randomPlusThree = randomNum + 3;
+var randomPlusFour = randomNum + 4;
+var randomPlusFive = randomNum + 5;
+var randomPlusSix = randomNum + 6;
+var randomPlusSeven = randomNum + 7;
+var randomPlusEight = randomNum + 8;
+var randomPlusNine = randomNum + 9;
+
+
+
+$(document).ready(function() {
+  
+  //Button one is clicked
+  $('#b1').on("click", function() {
+  $(this).addClass('invisible');
+    $('#b2').removeClass('invisible');
+    $.getJSON('http://startupquote.com/api/read/json?filter=text&start=' + randomNum + '&callback=?',
+      function(data) {
+
+        $.each(data.posts, function(i, posts) {
+
+          var photocaption = this["photo-caption"];
+          $('#ajax').html(photocaption);
+          //$('<p>' + photocaption + '</p>').appendTo('#ajax');
+          if (i == 0) return false;
+        });
+      });
+
+  });
+  
+  
+  //Button two is clicked
+    $('#b2').on("click", function() {
+  $(this).addClass('invisible');
+    $('#b3').removeClass('invisible');
+    $.getJSON('http://startupquote.com/api/read/json?filter=text&start=' + randomPlusOne + '&callback=?',
+      function(data) {
+
+        $.each(data.posts, function(i, posts) {
+
+          var photocaption = this["photo-caption"];
+          $('#ajax').html(photocaption);
+          //$('<p>' + photocaption + '</p>').appendTo('#ajax');
+          if (i == 0) return false;
+        });
+      });
+
+  });
+  
+  //Button three is clicked
+  $('#b3').on("click", function() {
+  $(this).addClass('invisible');
+    $('#b4').removeClass('invisible');
+    $.getJSON('http://startupquote.com/api/read/json?filter=text&start=' + randomPlusTwo + '&callback=?',
+      function(data) {
+
+        $.each(data.posts, function(i, posts) {
+
+          var photocaption = this["photo-caption"];
+          $('#ajax').html(photocaption);
+          //$('<p>' + photocaption + '</p>').appendTo('#ajax');
+          if (i == 0) return false;
+        });
+      });
+
+  });
+  
+  //Button four is clicked
+  $('#b4').on("click", function() {
+  $(this).addClass('invisible');
+    $('#b5').removeClass('invisible');
+    $.getJSON('http://startupquote.com/api/read/json?filter=text&start=' + randomPlusThree + '&callback=?',
+      function(data) {
+
+        $.each(data.posts, function(i, posts) {
+
+          var photocaption = this["photo-caption"];
+          $('#ajax').html(photocaption);
+          //$('<p>' + photocaption + '</p>').appendTo('#ajax');
+          if (i == 0) return false;
+        });
+      });
+
+  });
+  
+  //Button five is clicked
+  $('#b5').on("click", function() {
+  $(this).addClass('invisible');
+    $('#b6').removeClass('invisible');
+    $.getJSON('http://startupquote.com/api/read/json?filter=text&start=' + randomPlusFour + '&callback=?',
+      function(data) {
+
+        $.each(data.posts, function(i, posts) {
+
+          var photocaption = this["photo-caption"];
+          $('#ajax').html(photocaption);
+          //$('<p>' + photocaption + '</p>').appendTo('#ajax');
+          if (i == 0) return false;
+        });
+      });
+
+  });
+  
+  //Button six is clicked
+  $('#b6').on("click", function() {
+  $(this).addClass('invisible');
+    $('#b7').removeClass('invisible');
+    $.getJSON('http://startupquote.com/api/read/json?filter=text&start=' + randomPlusFive + '&callback=?',
+      function(data) {
+
+        $.each(data.posts, function(i, posts) {
+
+          var photocaption = this["photo-caption"];
+          $('#ajax').html(photocaption);
+          //$('<p>' + photocaption + '</p>').appendTo('#ajax');
+          if (i == 0) return false;
+        });
+      });
+
+  });
+  
+  //Button seven is clicked
+  $('#b7').on("click", function() {
+  $(this).addClass('invisible');
+    $('#b8').removeClass('invisible');
+    $.getJSON('http://startupquote.com/api/read/json?filter=text&start=' + randomPlusSix + '&callback=?',
+      function(data) {
+
+        $.each(data.posts, function(i, posts) {
+
+          var photocaption = this["photo-caption"];
+          $('#ajax').html(photocaption);
+          //$('<p>' + photocaption + '</p>').appendTo('#ajax');
+          if (i == 0) return false;
+        });
+      });
+
+  });
+  
+  //Button eight is clicked
+  $('#b8').on("click", function() {
+  $(this).addClass('invisible');
+    $('#b9').removeClass('invisible');
+    $.getJSON('http://startupquote.com/api/read/json?filter=text&start=' + randomPlusSeven + '&callback=?',
+      function(data) {
+
+        $.each(data.posts, function(i, posts) {
+
+          var photocaption = this["photo-caption"];
+          $('#ajax').html(photocaption);
+          //$('<p>' + photocaption + '</p>').appendTo('#ajax');
+          if (i == 0) return false;
+        });
+      });
+
+  });
+  
+  //Button nine is clicked
+  $('#b9').on("click", function() {
+  $(this).addClass('invisible');
+    $('#b10').removeClass('invisible');
+    $.getJSON('http://startupquote.com/api/read/json?filter=text&start=' + randomPlusEight + '&callback=?',
+      function(data) {
+
+        $.each(data.posts, function(i, posts) {
+
+          var photocaption = this["photo-caption"];
+          $('#ajax').html(photocaption);
+          //$('<p>' + photocaption + '</p>').appendTo('#ajax');
+          if (i == 0) return false;
+        });
+      });
+
+  });
+  
+  //Button ten is clicked
+  $('#b10').on("click", function() {
+  $(this).addClass('invisible');
+    $('#b1').removeClass('invisible');
+    $.getJSON('http://startupquote.com/api/read/json?filter=text&start=' + randomPlusNine + '&callback=?',
+      function(data) {
+
+        $.each(data.posts, function(i, posts) {
+
+          var photocaption = this["photo-caption"];
+          $('#ajax').html(photocaption);
+          //$('<p>' + photocaption + '</p>').appendTo('#ajax');
+          if (i == 0) return false;
+        });
+      });
+
+  });
+  
+});
+    
+    </script>
+  </body>
+  </html>
